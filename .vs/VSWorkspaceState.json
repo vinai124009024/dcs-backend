@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.elixir_ls",
+    "\\lib",
+    "\\lib\\auth_web",
+    "\\lib\\auth_web\\live"
+  ],
+  "PreviewInSolutionExplorer": false
+}

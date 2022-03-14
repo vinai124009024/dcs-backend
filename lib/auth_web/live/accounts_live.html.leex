@@ -1,0 +1,18 @@
+<div class = "acc_col">
+    <%= for g <- @users do %>
+        <div class = "acc_row">
+            <div><%= g.email  %></div>
+            <%= if g.is_admin do %>
+                <div>Admin</div>
+                <div class = "sm_but"></div>
+            <% else %>
+                <div>User</div>
+                <%= if @current_user.is_admin do %>
+                    <button class = "sm_but" phx-click="make_admin" value="<%= g.id %>"> Make Admin</button>
+                <% else %>
+                    <div class = "sm_but"></div>
+                <% end %>
+            <% end %>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,63 @@
+<div class = "row">
+
+  <%= if @current_user.is_admin do %>
+    <div id = "add_movie_bar">
+      <input id="movie-input" type="text" phx-keyup="movie_input"/>
+      <button id = "add_button" phx-click="add_movie">
+        Add Movie
+      </button>
+    </div>
+  <% end %>
+
+  <%= for g <- @movie_list do %>
+    <button class = "movie_tile" phx-click="open_movie_tile" phx-value-gid=<%= g.id %> >
+      <div><%= g.name  %></div>
+      <div><%= g.author %></div>
+    </button>
+  <% end %>
+
+</div>
+
+<%= if @movie_tile_toggle do %>
+<div id = "movie_panel">
+  <%= if @movie_tile != nil do %>
+    <button phx-click="close_movie_tile"> Back </button>
+    <div>Name : <%= @movie_tile.name  %></div>
+    <div>By : <%= @movie_tile.author  %></div>
+    <div><%= @movie_tile.inserted_at  %></div>
+    <button class = "sm_but" phx-click="delete_movie">Delete</button>
+    <div> Reviews :- </div>
+    <div id = "add_movie_bar">
+      <input id="review-input" type="text" phx-keyup="review_input"/>
+      <button id = "add_button" phx-click="add_review">
+        Add
+      </button>
+    </div>
+    <%= if @movie_tile.reviews != nil do %>
+      <%= for g <- @movie_tile.reviews do %>
+        <div class = "movie_tile_review" >
+          <div class = "movie_tile_review_div">
+            <div><%= g["review"] %></div>
+            <div><%= g["author"] %></div>
+          </div>
+          <%= if g["author"] == @current_user.email do %>
+            <div class = "movie_tile_edit">
+              <button phx-click="edit_review" value = "<%= g["review"] %>">Edit</button>
+              <button phx-click="delete_review" value = "<%= g["review"] %>" phx-value-gau = "<%= g["author"] %>" >Delete</button>
+            </div>
+            <%= if @edit_review == g["review"] do %>
+              <div id = "edit_movie_bar">
+                <input id="review-input" type="text" value = "<%= g["review"] %>" phx-keyup="review_input"/>
+                <button id = "add_button" phx-click="save_review" value = "<%= g["review"] %>" phx-value-gau = "<%= g["author"] %>" >
+                  Save
+                </button>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<% end %>
