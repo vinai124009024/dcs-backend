@@ -22,7 +22,7 @@ config :logger, level: :info
 config :auth, AuthWeb.Endpoint,
   #...,
   url: [scheme: "https", host: "whispering-everglades-22121.herokuapp.com", port: 4000],
-  #force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
   https: [
     #...,
     port: 4000,
