@@ -27,8 +27,8 @@ config :auth, AuthWeb.Endpoint,
     #...,
     port: 443,
     cipher_suite: :strong,
-    #keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
-    #certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
+    keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
+    certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
   ]
 #
 # The `cipher_suite` is set to `:strong` to support only the
