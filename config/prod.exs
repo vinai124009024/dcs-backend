@@ -14,6 +14,9 @@ config :auth, AuthWeb.Endpoint, cache_static_manifest: "priv/static/cache_manife
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :auth, AuthWeb.Endpoint,
+  check_origin: ["http://localhost:4000/", "https://whispering-everglades-22121.herokuapp.com/"]
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
