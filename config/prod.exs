@@ -24,7 +24,7 @@ config :auth, AuthWeb.Endpoint,
   url: [scheme: "https", host: "whispering-everglades-22121.herokuapp.com", port: 443],
   #force_ssl: [rewrite_on: [:x_forwarded_proto]],
   https: [
-    ...,
+    #...,
     port: 443,
     cipher_suite: :strong,
     #keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
