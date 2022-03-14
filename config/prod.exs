@@ -20,7 +20,7 @@ config :logger, level: :info
 # to the previous section and set your `:url` port to 443:
 #
 config :auth, AuthWeb.Endpoint,
-  ...,
+  #...,
   url: [scheme: "https", host: "whispering-everglades-22121.herokuapp.com", port: 443],
   #force_ssl: [rewrite_on: [:x_forwarded_proto]],
   https: [
