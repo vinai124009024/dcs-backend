@@ -24,11 +24,11 @@ config :auth, AuthWeb.Endpoint,
 #
 config :auth, AuthWeb.Endpoint,
   #...,
-  url: [scheme: "https", host: "whispering-everglades-22121.herokuapp.com", port: 4000],
+  url: [scheme: "https", host: "whispering-everglades-22121.herokuapp.com", port: 4001],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   https: [
     #...,
-    port: 4000,
+    port: 4001,
     cipher_suite: :strong,
     keyfile: "priv/cert/selfsigned_key.pem",
     certfile: "priv/cert/selfsigned.pem"
