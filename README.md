@@ -8,12 +8,12 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+## Instructions
+  
+  * Open the website at https://whispering-everglades-22121.herokuapp.com/
+  * Only an admin can create another admin from the accounts page.
+  * A test admin and user account has been created :
+  * User account :-  email : user@gmail.com  password : user12345678
+  * Admin account :-  email : admin@gmail.com  password : admin1234567
+  * An admin can create and delete a movie stream.
+  * A user can add, update and delete reviews, created by the same.
